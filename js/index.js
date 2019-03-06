@@ -123,3 +123,51 @@ button[2].addEventListener('dblclick', function (e) {
     destCard[2].style.width = '30%';
     e.stopPropagation();
 });
+
+
+//-----------------key down [0 -3] to select font ---------------
+
+const font = document.getElementById("font");
+const fontArray = [
+    'https://fonts.googleapis.com/css?family=Indie+Flower|Roboto',
+    'https://fonts.googleapis.com/css?family=Srisakdi|Roboto',
+    "https://fonts.googleapis.com/css?family=Moul|Roboto",
+    "https://fonts.googleapis.com/css?family=Pacifico|Roboto"
+]
+
+window.addEventListener('keydown', function (e) {
+    if (e.key == 0 || e.key == 1 || e.key == 2 || e.key == 3) {
+        font.href = fontArray[e.key]
+        // document.querySelector('h1').style.fontFamily = newfont;
+        // body.style.fontFamily = fontArray[e.key];
+        console.log("if statement");
+        console.log(typeof fontArray[e.key]);
+    }
+});
+
+
+//-----------------------resize : changes background color of body---------------
+
+window.addEventListener('resize', function (e) {
+    body.style.background = '#a8fff4';
+});
+
+
+//----------------------mousemove over nav bar resets background color-----------
+
+navBar.addEventListener('mousemove', function (e) {
+    body.style.background = '#FFFFFF';
+});
+
+
+//---------------------------mouseover changes img size----------------
+
+const img = document.getElementById('busPic');
+
+img.addEventListener('mouseover', function (e) {
+    img.style.width = '50%';
+});
+
+navBar.addEventListener('mousemove', function () {
+    img.style.width = '100%';
+});
